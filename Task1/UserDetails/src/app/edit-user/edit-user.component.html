@@ -1,0 +1,99 @@
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> User has been updated
+</div>
+
+<div class="container mt-5">
+    <form [formGroup]="editUser" (ngSubmit)="editUserSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter First Name" formControlName="firstName"
+                        maxlength="50" />
+                    <small *ngIf="editUser.get('firstName')?.invalid && editUser.get('firstName')?.touched"
+                        class="text-danger">First name is required!</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastName"
+                        maxlength="50" />
+                    <small *ngIf="editUser.get('lastName')?.invalid && editUser.get('lastName')?.touched"
+                        class="text-danger">Last name is required!</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter Email" formControlName="email"
+                        maxlength="50" readonly />
+                    <small *ngIf="editUser.get('email')?.invalid && editUser.get('email')?.touched"
+                        class="text-danger">Valid Email is required!</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Phone</label>
+                    <input type="text" class="form-control" placeholder="Enter PhoneNumber" formControlName="phone"
+                        maxlength="50" />
+                    <small *ngIf="editUser.get('phone')?.invalid && editUser.get('phone')?.touched"
+                        class="text-danger">Valid Phone Number is required!</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Street Address</label>
+                    <input type="text" class="form-control" placeholder="Enter Address" formControlName="streetNumber"
+                        maxlength="150" />
+                    <small *ngIf="editUser.get('phone')?.invalid && editUser.get('phone')?.touched"
+                        class="text-danger">Valid Phone Number is required!</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-control" placeholder="Enter City" formControlName="city"
+                        maxlength="50" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">State</label>
+                    <input type="text" class="form-control" placeholder="Enter State" formControlName="state"
+                        maxlength="50" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">UserName</label>
+                    <input type="text" class="form-control" placeholder="Enter UserName" formControlName="userName"
+                        maxlength="50" readonly />
+                    <small *ngIf="editUser.get('userName')?.invalid && editUser.get('userName')?.touched"
+                        class="text-danger">UserName is required!</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter Password" formControlName="password"
+                        maxlength="50" />
+                    <small *ngIf="editUser.get('password')?.invalid && editUser.get('password')?.touched"
+                        class="text-danger">Password is required! (Atleast 6 characters required)</small>
+                </div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="editUser.invalid" class="btn btn-success mt-3 me-2">Submit</button>
+        <button class="btn btn-primary mt-3" routerLink="home">Back to list</button>
+    </form>
+
+
+</div>
