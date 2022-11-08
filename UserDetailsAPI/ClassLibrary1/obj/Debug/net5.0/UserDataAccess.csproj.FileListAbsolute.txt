@@ -1,0 +1,15 @@
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\bin\Debug\net5.0\UserDataAccess.deps.json
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\bin\Debug\net5.0\UserDataAccess.runtimeconfig.json
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\bin\Debug\net5.0\UserDataAccess.runtimeconfig.dev.json
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\bin\Debug\net5.0\UserDataAccess.dll
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\bin\Debug\net5.0\ref\UserDataAccess.dll
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\bin\Debug\net5.0\UserDataAccess.pdb
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\UserDataAccess.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\UserDataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\UserDataAccess.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\UserDataAccess.AssemblyInfo.cs
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\UserDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\UserDataAccess.dll
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\ref\UserDataAccess.dll
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\UserDataAccess.pdb
+C:\Users\Asus\source\repos\UserDetailsAPI\ClassLibrary1\obj\Debug\net5.0\UserDataAccess.genruntimeconfig.cache
