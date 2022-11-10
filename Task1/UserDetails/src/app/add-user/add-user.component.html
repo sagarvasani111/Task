@@ -1,0 +1,101 @@
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> New User has been added
+</div>
+<div *ngIf="isExist" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Alert!</strong> User Alreay exist
+</div>
+
+<div class="container mt-5">
+    <form [formGroup]="addUser" (ngSubmit)="addNewUserSubmit()">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter First Name" formControlName="firstName"
+                        maxlength="50" tabindex="1" />
+                    <small *ngIf="addUser.get('firstName')?.invalid && isValid"
+                        class="text-danger">First name is required!</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" formControlName="lastName"
+                        maxlength="50" tabindex="2" />
+                    <small *ngIf="addUser.get('lastName')?.invalid && isValid"
+                        class="text-danger">Last name is required!</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Enter Email" formControlName="email"
+                        maxlength="50" tabindex="3" />
+                    <small *ngIf="addUser.get('email')?.invalid && isValid"
+                        class="text-danger">Valid Email is required!(Ex: abc@abc.com)</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Phone</label>
+                    <input type="text" class="form-control" placeholder="Enter PhoneNumber" formControlName="phone"
+                        maxlength="50" tabindex="4" />
+                    <small *ngIf="addUser.get('phone')?.invalid && isValid"
+                        class="text-danger">Valid Phone Number is required!(10 digit)</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Street Address</label>
+                    <input type="text" class="form-control" placeholder="Enter Address" formControlName="streetNumber"
+                        maxlength="150" tabindex="5" />
+                    <small *ngIf="addUser.get('streetNumber')?.invalid && isValid"
+                        class="text-danger">Address is required!(maxlength 150)</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-control" placeholder="Enter City" formControlName="city"
+                        maxlength="50" tabindex="6" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">State</label>
+                    <input type="text" class="form-control" placeholder="Enter State" formControlName="state"
+                        maxlength="50" tabindex="7" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">UserName</label>
+                    <input type="text" class="form-control" placeholder="Enter UserName" formControlName="userName"
+                        maxlength="50" tabindex="8" />
+                    <small *ngIf="addUser.get('userName')?.invalid && isValid"
+                        class="text-danger">UserName is required!</small>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-outline mb-4">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter Password" formControlName="password"
+                        maxlength="50" tabindex="9" />
+                    <small *ngIf="addUser.get('password')?.invalid && isValid"
+                        class="text-danger">Password is required! (Atleast 6 characters required)</small>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Submit</button>
+    </form>
+
+
+</div>
