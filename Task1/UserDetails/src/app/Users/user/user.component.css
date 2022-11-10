@@ -1,0 +1,46 @@
+table {
+  width: 100%;
+}
+
+.page-item:first-child .page-link {
+
+  margin-left: 0;
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+
+}
+
+
+
+.pageColor {
+
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: white !important;
+  background-color: black !important;
+  border: 1px solid #dee2e6;
+  text-decoration: none;
+}
+
+
+.page-link {
+
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: black;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.activeTabColor{  
+ 
+      color: #fff;   
+      background-color: #000000;  
+  
+  } 
