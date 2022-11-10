@@ -1,0 +1,62 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-2">
+            <mat-form-field>
+                <input matInput placeholder="search" autocomplete="off" (keyup)="filterData($event)" />
+            </mat-form-field>
+        </div>
+
+    </div>
+
+</div>
+<div class="container mb-5">
+
+    <table class="table table-secondary">
+        <thead class="table table-dark">
+            <tr class="text-light">
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>UserName</th>
+                <th>Password</th>
+                <th>Edit/Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let res of apiResponse">
+                <td>{{res.firstName}}</td>
+                <td>{{res.lastName}}</td>
+                <td>{{res.email}}</td>
+                <td>{{res.streetNumber}}</td>
+                <td>{{res.city}}</td>
+                <td>{{res.state}}</td>
+                <td>{{res.userName}}</td>
+                <td>{{res.password}}</td>
+                <td> <a routerLink="/update/{{res.id}}">
+                        <i class="fa fa-edit ms-3" style="font-size: 20px; color: blue" (click)="editUser(res.id)"></i>
+                    </a>
+                    <i class="fa fa-trash ms-3" style="font-size: 20px; color: red" (click)="deleteUser(res.id)"></i>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="container mw-100">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <ul class="pagination justify-content-center">
+                    <li *ngFor="let page of pageField;let i=index" class="page-item">
+                        <a (click)="showUserByPageNum(page,i)"
+                            [ngClass]="pageNumber[i] ? 'pageColor':'page-link'"
+                            style=" margin-right: 5px;;margin-top: 5px">{{page}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
