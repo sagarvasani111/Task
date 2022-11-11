@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -108,17 +108,29 @@ namespace UserDetailsAPI.Controllers
             return Ok(user);
         }
 
+        //[HttpGet("GetUserBySearch")]
+        //public IEnumerable<UserDetail> SearchByName(string name)
+        //{
+        //    var data = entities.UserDetails.Where(e => e.FirstName.Contains(name) || e.LastName.Contains(name) || e.Email.Contains(name));
+        //    return data;
+        //}
+
         [HttpGet("GetUserBySearch")]
-        public IEnumerable<UserDetail> SearchByName(string name)
+        public IEnumerable<UserDetail> SearchByName(int pageNo, int pageSize, string sortOrder,string name)
         {
-            var data = entities.UserDetails.Where(e => e.FirstName.Contains(name) || e.LastName.Contains(name) || e.Email.Contains(name));
+
+            SqlParameter spage = new SqlParameter("@PageNo", pageNo);
+            SqlParameter spageSize = new SqlParameter("@PageSize", pageSize);
+            SqlParameter ssortOrder = new SqlParameter("@SortOrder", sortOrder);
+            SqlParameter ssearch = new SqlParameter("@Seach", name);
+            var data = entities.UserDetails.FromSqlRaw<UserDetail>("EXECUTE GetAllSearchUsers {0}, {1}, {2}, {3}", spage, spageSize, ssortOrder, ssearch).ToList();
             return data;
         }
 
         [HttpGet("GetUserBySearchCount")]
         public int SearchCount(string name)
         {
-            var data = entities.UserDetails.Where(e => e.FirstName.Contains(name) || e.LastName.Contains(name) || e.Email.Contains(name)).Count();
+            var data = entities.UserDetails.Where(e => (e.FirstName.Contains(name) || e.LastName.Contains(name) || e.Email.Contains(name)) && e.Status.Equals(false)).Count();
             return data;
         }
     }
